@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import Navbar from '../../../components/Navbar';
 
 export default function EditProduct({ params }) {
   const [name, setName] = useState('');
@@ -135,7 +136,9 @@ export default function EditProduct({ params }) {
   };
 
   return (
-    <div className="max-w-4xl mx-auto mt-10 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+      <Navbar />
+      <div className="max-w-4xl mx-auto mt-10 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-6 text-center text-gray-800 dark:text-white">Edit Product</h2>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
@@ -262,5 +265,7 @@ export default function EditProduct({ params }) {
         </div>
       )}
     </div>
+    </div>
+    
   );
 }
